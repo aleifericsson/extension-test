@@ -41,6 +41,10 @@ const write = (element, text) => {
     element.textContent = text;
 }
 
+const read = (element) =>{
+    return element.textContent
+}
+
 const detect = (element, event, func) =>{
     element.addEventListener(event, func);
 }
@@ -139,4 +143,4 @@ const getPosEle = (element, size) => {
     }
 }
 
-export {render, remove, create, addClass, hasClass, remClass, find, findAll, write, detect, undetect, style, attribs, isElement}
+export {render, remove, create, addClass, hasClass, remClass, find, findAll, write, read, detect, undetect, style, attribs, isElement}

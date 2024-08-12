@@ -6,17 +6,36 @@
     },
     "version": "1.0.0",
     "background":{
-        "service_worker":"service-worker.js",
-        "type":"module"
+        "service_worker":"service-worker.js"
     },
     "action":{
       "default_popup":"index.html"
     },
     "permissions": [
-      "scripting"
+      "scripting",
+      "storage",
+      "activeTab"
     ],
+    
     "host_permissions":[
       "http://*/*",
       "https://*/*"
-    ]
+    ],
+    "content_scripts": [
+      {
+        "js": ["script2.js"],
+        "matches": [
+          "https://developer.chrome.com/docs/extensions/*",
+          "https://developer.chrome.com/docs/webstore/*"
+        ]
+      }
+    ],
+    "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
+  }
   }
